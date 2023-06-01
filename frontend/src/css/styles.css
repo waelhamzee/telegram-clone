@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
+    "Segoe UI", Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  scroll-behavior: unset;
+  /* scrollbar-width: none; */
+  /* -ms-overflow-style: none; */
+}
+
+:root {
+  --background-image : url('../images/chat-bg-br.f34cc96fbfb048812820..png');
+}
+
+.dark-mode {
+  --background-image : rgb(33,33,33);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  transition: all 0.3s linear;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px 10px transparent;
+  /* border: solid 3px transparent; */
+}
+
+/* ::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 10px 10px white;
+  border: solid 3px transparent;
+  background-clip: content-box;
+  border-radius: 10px;
+} */
+
+.main-container {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* @media screen and (max-width: 1000px) {
+  .main-container {
+    grid-template-columns: 0.8fr 1fr;
+  }
+}
+
+@media screen and (max-width: 652px) {
+  .main-container {
+    grid-template-columns: 1fr 0.8fr;
+  }
+} */
+
+@media screen and (max-width: 501px) {
+  .main-container {
+    grid-template-columns: 1fr 0px ;
+  }
+  .first-container {
+    z-index: 0;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background: var(--background-image);
+  /* background-image : url('../images/A_black_image.jpg'); */
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.wrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url('../images/chat-bg-pattern-light.ee148af944f6580293ae..png');
+  background-position: top right;
+  background-size: 510px auto;
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+}
+
+.call-toggle {
+  height: 30px;
+  width: 100%;
+  background: linear-gradient(135deg, rgb(49, 82, 232), rgb(143, 74, 172));
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: white;
+  transform: translateY(-100%);
+  animation: animate-call-toggle 300ms forwards ease-in-out;
+}
+
+@keyframes animate-call-toggle {
+  100% {
+    transform: translateY(0);
+  }
+}
